@@ -36,7 +36,7 @@ export default function ForgotPassword() {
             <ToastContainer />
             <div className="h-screen w-screen flex justify-center items-center">
                 <div className="w-[500px] p-5 rounded-lg shadow-lg">
-                    <h1 className="text-2xl font-bold">Forgot Passowrd ?</h1>
+                    <h1 className="text-2xl font-bold">Forgot Password ?</h1>
                     <p>
                         Don't worry it happens. just enter your email below and we will send
                         an email to you.
