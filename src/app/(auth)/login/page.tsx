@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import { signIn } from "next-auth/react";
 import Toast from "@/app/components/Toast";
+import { Suspense } from "react";
 
 export default function SignInOne() {
-    const searchParam = useSearchParams();
 
     const [authData, setAuthData] = useState({
         email: "",
@@ -17,9 +16,6 @@ export default function SignInOne() {
     const [loading, setLoading] = useState<boolean>(false);
     const [errors, setError] = useState<LoginErrorType>();
 
-    useEffect(() => {
-        console.log("The query is", searchParam.get("error"));
-    }, []);
 
     //   * Submit the data
     const submitForm = async () => {
@@ -58,7 +54,9 @@ export default function SignInOne() {
 
     return (
         <section>
-            <Toast />
+            <Suspense>
+                <Toast />
+            </Suspense>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
                 <div className="relative flex items-end px-4 pb-10 pt-60 sm:px-6 sm:pb-16 md:justify-center lg:px-8 lg:pb-24">
                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>

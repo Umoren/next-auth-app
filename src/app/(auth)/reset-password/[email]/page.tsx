@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Suspense } from 'react'
 
 export default function ResetPassword({
     params,
@@ -42,7 +43,9 @@ export default function ResetPassword({
     };
     return (
         <>
-            <ToastContainer />
+            <Suspense>
+                <ToastContainer />
+            </Suspense>
             <div className="h-screen w-screen flex justify-center items-center">
                 <div className="w-[500px] p-5 rounded-lg shadow-lg">
                     <h1 className="text-2xl font-bold">Reset Password ?</h1>
